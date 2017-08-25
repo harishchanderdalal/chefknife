@@ -1,7 +1,7 @@
 # chef
 
 ## Platform
-- ubuntu 16
+- Ubuntu Server 16.04 LTS
 
 ## Install Chef Server/Manger
 
