@@ -13,7 +13,7 @@ sudo chef-server-ctl test
 sudo chef-server-ctl install chef-manage 
 sudo chef-server-ctl reconfigure
 sudo chef-manage-ctl reconfigure
-sudo chef-server-ctl user-create harishagility harish agility harish@agilityroots.com pass@123
+sudo chef-server-ctl user-create USERNAME FIRSTNAME LASTNAME EMAILID PASSWORD
 sudo chef-manage-ctl restart
 sudo chef-server-ctl restart
 ```
