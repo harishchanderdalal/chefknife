@@ -23,7 +23,7 @@
     stage ('vagrant box')
     {
           dir ('vagrant') {
-          sh 'sudo vagrant box add dummy https://github.com/mitchellh/vagrant-aws/raw/master/dummy.box'
+          sh 'sudo vagrant box add dummy --force https://github.com/mitchellh/vagrant-aws/raw/master/dummy.box'
              echo 'Vagrant Ready To Launch'
              }
     }
