@@ -10,3 +10,11 @@ sudo chef-manage-ctl reconfigure --accept-license
 sudo chef-server-ctl user-create agilityroots agility roots admin@agilityroots.com admin@123$
 sudo chef-manage-ctl restart
 sudo chef-server-ctl restart
+
+sudo chef-server-ctl install opscode-push-jobs-server
+sudo chef-server-ctl reconfigure
+sudo opscode-push-jobs-server-ctl reconfigure
+
+sudo chef-server-ctl install opscode-reporting
+sudo chef-server-ctl-reconfigure
+sudo opscode-reporting-ctl reconfigure --accept-license
