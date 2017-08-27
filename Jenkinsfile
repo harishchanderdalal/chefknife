@@ -36,7 +36,7 @@
           sh 'export sgroup=${sgroup}'
           sh 'export tag=${tag}'
           sh 'export owner=${owner}'
-          sh 'chmod +x vagrantfile.sh'
+          sh 'sudo chmod +x vagrantfile.sh'
           sh './vagrantfile.sh > Vagrantfile'
               echo 'Vagrantfile Created'
               }
