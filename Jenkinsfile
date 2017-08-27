@@ -12,7 +12,7 @@
      stage ('Vagrant Install')
     {
         dir ('Vagrant') { 
-        sh 'sudo chmod +x vagrantInstall.sh
+        sh 'sudo chmod +x vagrantInstall.sh'
         sh 'sudo ./vagrantInstall.sh'
         echo 'vagrant install'
              }
