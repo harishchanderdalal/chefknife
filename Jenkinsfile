@@ -23,7 +23,6 @@
      stage ('Variable Pem')
     {
         dir ('vagrant') { 
-        sh 'export privatekeypem=${privatekeypem}'
         echo 'vagrant install'
              }
     }
