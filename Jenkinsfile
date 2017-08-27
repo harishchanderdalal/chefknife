@@ -25,6 +25,7 @@
           dir ('vagrant') {
           sh 'vagrant box add dummy https://github.com/mitchellh/vagrant-aws/raw/master/dummy.box'
           sh 'vagrant init'
+          sh 'sudo rm -rf Vagrantfile'
              echo 'Vagrant Ready To Launch'
              }
     }
