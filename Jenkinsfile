@@ -23,8 +23,8 @@
     {
         dir ('vagrant') { 
         sh 'export keypair=${keypair}'
-         sh 'export pem=${pem}'
-        sh 'echo $pem > /var/lib/jenkins/workspace/${JOB_NAME}harishApSoutEast1.pem'
+        sh 'export pem=${pem}'
+         sh 'echo $pem > /var/lib/jenkins/workspace/${JOB_NAME}/vagrant/${keypair}.pem'
         echo 'vagrant install'
              }
     }
