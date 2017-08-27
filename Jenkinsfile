@@ -47,7 +47,7 @@
     stage ('Ec2 Provison')
     {
        dir ('vagrant') {
-       sh 'vagrant up --provider=aws'
+       sh 'sudo vagrant up --provider=aws'
              echo 'Ec2 Created'
              } 
             }
