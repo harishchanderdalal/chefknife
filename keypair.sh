@@ -1,4 +1,4 @@
 #! /bin/sh
 cat <<EOF
-$pem
+$privatekeypem
 EOF
