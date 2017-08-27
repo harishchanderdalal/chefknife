@@ -3,7 +3,7 @@
  
      stage ('Git Checkout')
     {
-          dir ('Vagrant') { 
+          dir ('vagrant') { 
           git 'https://github.com/harishchanderdalal/vagrantProvisionEc2Chef.git'
    	      echo 'Repository Clone'
              }
@@ -11,7 +11,7 @@
   
      stage ('Vagrant Install')
     {
-        dir ('Vagrant') { 
+        dir ('vagrant') { 
         sh 'sudo chmod +x vagrantInstall.sh'
         sh 'sudo chmod +x vagrantfile.sh'
         sh 'sudo ./vagrantInstall.sh'
@@ -21,7 +21,7 @@
   
      stage ('Variable Pem')
     {
-        dir ('Vagrant') { 
+        dir ('vagrant') { 
         sh 'export keypair=${keypair}'
          sh 'export pem=${pem}'
         sh 'echo $pem > /var/lib/jenkins/workspace/${JOB_NAME}$keypair.pem'
