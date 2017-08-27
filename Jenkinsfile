@@ -24,7 +24,6 @@
     {
         dir ('vagrant') { 
         sh 'export privatekeypem=${privatekeypem}'
-        sh './keypair.sh > keypair.pem'
         echo 'vagrant install'
              }
     }
