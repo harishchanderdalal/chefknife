@@ -17,6 +17,6 @@ Vagrant.configure('2') do |config|
     override.ssh.username = 'ubuntu'
     override.ssh.private_key_path = '/var/lib/jenkins/workspace/${JOB_NAME}$keypair.pem'
   end
-   config.vm.provision :shell, :path => "chef_install.sh"
+   config.vm.provision :shell, :path => "chefInstall.sh"
 end
 EOF
