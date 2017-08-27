@@ -24,7 +24,7 @@
         dir ('vagrant') { 
         sh 'export keypair=${keypair}'
         sh 'export pem=${pem}'
-         sh 'echo $pem > /var/lib/jenkins/workspace/${keypair}.pem'
+        sh 'echo $pem > ~/${keypair}.pem'
         echo 'vagrant install'
              }
     }
