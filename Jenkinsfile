@@ -13,6 +13,7 @@
     {
         dir ('Vagrant') { 
         sh 'sudo chmod +x vagrantInstall.sh'
+        sh 'sudo chmod +x vagrantfile.sh'
         sh 'sudo ./vagrantInstall.sh'
         echo 'vagrant install'
              }
@@ -21,6 +22,8 @@
      stage ('Variable Pem')
     {
         dir ('Vagrant') { 
+        sh 'export keypair=${keypair}'
+         sh 'export pem=${pem}'
         sh 'echo $pem > /var/lib/jenkins/workspace/${JOB_NAME}$keypair.pem'
         echo 'vagrant install'
              }
@@ -31,12 +34,10 @@
           dir ('vagrant') { 
           sh 'export key=${key}'
           sh 'export access=${access}'
-          sh 'export keypair=${keypair}'
           sh 'export region=${region}'
           sh 'export sgroup=${sgroup}'
           sh 'export tag=${tag}'
           sh 'export owner=${owner}'
-          sh 'sudo chmod +x vagrantfile.sh'
           sh './vagrantfile.sh > Vagrantfile'
               echo 'Vagrantfile Created'
               }
