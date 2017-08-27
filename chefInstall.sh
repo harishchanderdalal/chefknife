@@ -6,7 +6,7 @@ sudo chef-server-ctl status
 sudo chef-server-ctl test
 sudo chef-server-ctl install chef-manage 
 sudo chef-server-ctl reconfigure
-sudo chef-manage-ctl reconfigure
+sudo chef-manage-ctl reconfigure --accept-license
 sudo chef-server-ctl user-create agilityroots agility roots admin@agilityroots.com admin@123$
 sudo chef-manage-ctl restart
 sudo chef-server-ctl restart
