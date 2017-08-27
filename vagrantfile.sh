@@ -9,13 +9,13 @@ Vagrant.configure('2') do |config|
     aws.instance_type = 't2.medium'
     aws.region = 'region'
     aws.ami = 'ami-099fe766'
-    aws.security_groups = 'sgroup'
+    aws.security_groups = '$sgroup'
     aws.tags = {
         'Name' => 'tag',
         'Owner' => 'owner'
     }
     override.ssh.username = 'ubuntu'
-    override.ssh.private_key_path = '/var/lib/jenkins/workspace/$keypair.pem'
+    override.ssh.private_key_path = '/var/lib/jenkins/workspace/$JOB_NAME/vagrant/keypair.pem'
   end
    config.vm.provision :shell, :path => "chefInstall.sh"
 end
