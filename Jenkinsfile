@@ -16,6 +16,14 @@
         echo 'vagrant install'
              }
     }
+  
+     stage ('Variable Pem')
+    {
+        dir ('Vagrant') { 
+        sh 'echo $pem > /var/lib/jenkins/workspace/${JOB_NAME}$keypair.pem'
+        echo 'vagrant install'
+             }
+    }
  
     stage ('Vagrant Build')
     {
