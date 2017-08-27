@@ -3,9 +3,17 @@
  
      stage ('Git Checkout')
     {
-          dir ('Vagrant Chef') { 
+          dir ('Vagrant') { 
           git 'https://github.com/harishchanderdalal/vagrantProvisionEc2Chef.git'
-    	      echo 'Repository Clone'
+   	      echo 'Repository Clone'
+             }
+    }
+  
+     stage ('Vagrant Install')
+    {
+        dir ('Vagrant') { 
+        sh './vagrant_Install.sh'
+        echo 'vagrant install'
              }
     }
  
