@@ -20,10 +20,12 @@
              }
     }
   
-     stage ('Variable Pem')
+    stage ('vagrant box')
     {
-        dir ('vagrant') { 
-        echo 'vagrant install'
+          dir ('vagrant') {
+          sh 'vagrant box add dummy https://github.com/mitchellh/vagrant-aws/raw/master/dummy.box'
+          sh 'vagrant init'
+             echo 'Vagrant Ready To Launch'
              }
     }
  
@@ -42,13 +44,6 @@
               }
     }
  
-    stage ('vagrant box')
-    {
-          dir ('vagrant') {
-          sh 'vagrant box add dummy https://github.com/mitchellh/vagrant-aws/raw/master/dummy.box'
-             echo 'Vagrant Ready To Launch'
-             }
-    }
  
     stage ('Ec2 Provison')
     {
