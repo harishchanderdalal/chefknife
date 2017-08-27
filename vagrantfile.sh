@@ -8,7 +8,7 @@ Vagrant.configure('2') do |config|
     aws.keypair_name = '$privatekeyname'
     aws.instance_type = 't2.medium'
     aws.region = '$region'
-    aws.ami = 'ami-099fe766'
+    aws.ami = 'ami-6f198a0c'
     aws.security_groups = '$sgroup'
     aws.tags = {
         'Name' => '$tag',
