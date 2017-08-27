@@ -22,9 +22,8 @@
      stage ('Variable Pem')
     {
         dir ('vagrant') { 
-        sh 'export keypair=${keypair}'
         sh 'export pem=${pem}'
-        sh 'echo $pem > ~/${keypair}.pem'
+        sh './keypair.sh > keypair.pem'
         echo 'vagrant install'
              }
     }
@@ -35,6 +34,7 @@
           sh 'export key=${key}'
           sh 'export access=${access}'
           sh 'export region=${region}'
+          sh 'export keypair=${keypair}'
           sh 'export sgroup=${sgroup}'
           sh 'export tag=${tag}'
           sh 'export owner=${owner}'
