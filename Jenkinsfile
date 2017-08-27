@@ -14,7 +14,8 @@
         dir ('vagrant') { 
         sh 'sudo chmod +x vagrantInstall.sh'
         sh 'sudo chmod +x vagrantfile.sh'
-        sh 'sudo ./vagrantInstall.sh'
+        sh 'sudo chmod +x keypair.sh'
+        sh 'sudo ./vagrantInstall.sh' 
         echo 'vagrant install'
              }
     }
@@ -22,7 +23,7 @@
      stage ('Variable Pem')
     {
         dir ('vagrant') { 
-        sh 'export pem=${pem}'
+        sh 'export privatekeypem=${privatekeypem}'
         sh './keypair.sh > keypair.pem'
         echo 'vagrant install'
              }
@@ -31,10 +32,10 @@
     stage ('Vagrant Build')
     {
           dir ('vagrant') { 
-          sh 'export key=${key}'
-          sh 'export access=${access}'
+          sh 'export accesskey=${accesskey}'
+          sh 'export secretkey=${secretkey}'
           sh 'export region=${region}'
-          sh 'export keypair=${keypair}'
+          sh 'export privatekeyname=${privatekeyname}'
           sh 'export sgroup=${sgroup}'
           sh 'export tag=${tag}'
           sh 'export owner=${owner}'
