@@ -45,7 +45,7 @@
       stage ('vagrant box')
     {
           dir ('vagrant') {
-          sh 'echo ${privatekeyname} > keypair.pem'
+          sh 'echo ${privatefile} > keypair.pem'
              echo 'Vagrant Ready To Launch'
              }
     }
