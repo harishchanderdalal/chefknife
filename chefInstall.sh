@@ -10,8 +10,9 @@ sudo chef-server-ctl reconfigure
 sudo chef-server-ctl status
 sudo chef-server-ctl test
 
-sudo chef-server-ctl user-create harishdalal harish dalal harishdalal@gmail.com harish@123$ --filename ~/.chef/harishdalal.pem
-sudo chef-server-ctl org-create dalal suranderdalal --association_user harishdalal --filename ~/.chef/dalal.pem
+sudo mkdir .chef
+sudo chef-server-ctl user-create admin admin admin admin@agility.com password -f ~/.chef/admin.pem
+sudo chef-server-ctl org-create agility "agility.com" --association_user admin -f ~/.chef/agility.pem
 
 sudo chef-server-ctl install chef-manage 
 sudo chef-server-ctl reconfigure
