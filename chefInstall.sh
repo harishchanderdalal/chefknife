@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo BEGIN
 sudo apt-get update
 sudo apt-get install -y wget
@@ -9,7 +10,8 @@ sudo chef-server-ctl reconfigure
 sudo chef-server-ctl status
 sudo chef-server-ctl test
 
-sudo chef-server-ctl user-create harishchanderdalal harish chander harish.chander@hotmail.com admin@123$
+sudo chef-server-ctl user-create harishdalal harish dalal harishdalal@gmail.com harish@123$ --filename ~/.chef/harishdalal.pem
+sudo chef-server-ctl org-create dalal suranderdalal --association_user harishdalal --filename ~/.chef/dalal.pem
 
 sudo chef-server-ctl install chef-manage 
 sudo chef-server-ctl reconfigure
@@ -25,4 +27,4 @@ sudo opscode-reporting-ctl reconfigure --accept-license
 
 sudo chef-manage-ctl restart
 sudo chef-server-ctl restart
-echo END
+echo DONE
