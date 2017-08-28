@@ -10,9 +10,7 @@ sudo chef-server-ctl reconfigure
 sudo chef-server-ctl status
 sudo chef-server-ctl test
 
-sudo mkdir .chef
-sudo chef-server-ctl user-create admin admin admin admin@agility.com password -f ~/.chef/admin.pem
-sudo chef-server-ctl org-create agility "agility.com" --association_user admin -f ~/.chef/agility.pem
+sudo chef-server-ctl user-create admin admin admin admin@agility.com password
 
 sudo chef-server-ctl install chef-manage 
 sudo chef-server-ctl reconfigure
