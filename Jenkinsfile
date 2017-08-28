@@ -14,7 +14,6 @@
         dir ('vagrant') { 
         sh 'sudo chmod +x vagrantInstall.sh'
         sh 'sudo chmod +x vagrantfile.sh'
-        sh 'sudo chmod +x keypair.sh'
         sh 'sudo ./vagrantInstall.sh' 
         echo 'vagrant install'
              }
@@ -42,7 +41,14 @@
               echo 'Vagrantfile Created'
               }
     }
- 
+  
+      stage ('vagrant box')
+    {
+          dir ('vagrant') {
+          sh 'echo ${privatekeyname} > keypair.pem'
+             echo 'Vagrant Ready To Launch'
+             }
+    }
  
     stage ('Ec2 Provison')
     {
