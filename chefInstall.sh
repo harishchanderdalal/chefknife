@@ -12,7 +12,7 @@ sudo chef-server-ctl test
 
 sudo mkdir .chef
 sudo chef-server-ctl user-create admin harish chander admin@agilityroots.com admin -f ~/.chef/admin.pem
-sudo chef-server-ctl org-create agility "agility" --association_user admin -f ~/.chef/agility.pem
+sudo chef-server-ctl org-create agility "agility roots" --association_user admin -f ~/.chef/agility.pem
 
 sudo chef-server-ctl install chef-manage 
 sudo chef-server-ctl reconfigure
