@@ -30,7 +30,7 @@ sudo chef-manage-ctl restart
 sudo chef-server-ctl restart
 
 ip=`curl ifconfig.me`
-echo "your Chef Server URL = $ip:"
+echo "your Chef Server URL = $ip"
 echo "USERNAME=admin"
 echo "PASSWORD=password"
 
