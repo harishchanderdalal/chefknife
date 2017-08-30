@@ -42,12 +42,21 @@
               }
     }
  
-    stage ('Ec2 Provison')
+    stage ('Chef Server Provison')
     {
-       dir ('vagrant') {
-       sh 'sudo vagrant up --provider=aws'
+         dir ('vagrant') {
+         sh 'sudo vagrant up --provider=aws'
              echo 'Ec2 Created'
              } 
-            }
+    }
+  
+      stage ('Chef Workstation')
+    {
+         dir ('vagrant') {
+         sh 'wget https://packages.chef.io/files/stable/chefdk/2.1.11/ubuntu/16.04/chefdk_2.1.11-1_amd64.deb'
+         sh 'sudo dpkg -i chefdk_2.1.11-1_amd64.deb'
+             echo 'Chef Workstation'
+             } 
+    }
   
   }     
