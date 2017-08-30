@@ -41,14 +41,6 @@
               echo 'Vagrantfile Created'
               }
     }
-  
-      stage ('vagrant box')
-    {
-          dir ('vagrant') {
-          sh 'echo ${privatefile} > keypair.pem'
-             echo 'Vagrant Ready To Launch'
-             }
-    }
  
     stage ('Ec2 Provison')
     {
