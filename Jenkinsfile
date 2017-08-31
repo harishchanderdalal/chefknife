@@ -13,8 +13,8 @@
     {
           dir ('knife') {
           sh 'sudo chmod +x knife.sh'
-           sh 'export chefurl=${url}'
-          sh './knife.sh > ~/chefWorkstation/chef-repo/.chef/knife.rb'
+          sh 'export chefurl=${url}'
+          sh './knife.sh > knife.rb'
    	      echo 'Knife Create'
           }
     }  
