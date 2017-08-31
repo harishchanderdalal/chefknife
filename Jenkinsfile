@@ -14,7 +14,8 @@
           dir ('dryRun') {
           sh 'sudo chmod +x knife.sh'
           sh 'cd /var/lib/jenkins/workspace/Chef/vagrant/' 
-          sh (export chefurl=`sudo vagrant ssh-config |awk 'NR==2{print $2}'`)
+          sh 'pwd'
+          sh 'exit'
           sh 'echo $chefurl'
           sh './knife.sh > /vagrant/chef-repo/.chef/knife.rb'
    	      echo 'Knife Create'
