@@ -13,8 +13,7 @@
     {
           dir ('knife') {
           sh 'sudo chmod +x knife.sh'
-          sh 'sudo chmod +x knifeconfig.sh'
-          sh './knifeconfig.sh'
+
           sh './knife.sh > ~/chefWorkstation/chef-repo/.chef/knife.rb'
    	      echo 'Knife Create'
           }
