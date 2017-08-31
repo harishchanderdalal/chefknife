@@ -1,14 +1,6 @@
 
  node('master') {
- 
-     stage ('Git Checkout')
-    {
-          dir ('vagrant') { 
-          git 'https://github.com/harishchanderdalal/vagrantProvisionEc2Chef.git'
-   	      echo 'Repository Clone'
-             }
-    }
-  
+   
      stage ('Knife Configure')
     {
           dir ('/vagrant/chef-repo/.chef') { 
