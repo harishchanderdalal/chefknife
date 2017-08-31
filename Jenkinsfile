@@ -13,7 +13,6 @@
     {
           dir ('knife') {
           sh 'sudo chmod +x knife.sh'
-          sh 'export chefurl=${url}'
           sh './knife.sh > knife.rb'
    	      echo 'Knife Create'
           }
@@ -27,7 +26,7 @@
  
       stage ('Knife Verify')
     {
-          sh '~/chefWorkstation/chef-repo/ && knife user list'
+          sh 'cd ~/chefWorkstation/chef-repo/ && knife user list'
    	      echo 'Knife Verify'
     }  
   }     
