@@ -17,7 +17,7 @@
           sh 'pwd'
           sh 'exit'
           sh 'echo $chefurl'
-          sh './knife.sh > /vagrant/chef-repo/.chef/knife.rb'
+          sh 'sudo ./knife.sh > /vagrant/chef-repo/.chef/knife.rb'
    	      echo 'Knife Create'
           }
     }  
