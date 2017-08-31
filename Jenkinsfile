@@ -9,54 +9,20 @@
              }
     }
   
-     stage ('Vagrant Install')
+     stage ('Knife Configure')
     {
-        dir ('vagrant') { 
-        sh 'sudo chmod +x vagrantInstall.sh'
-        sh 'sudo chmod +x vagrantfile.sh'
-        sh 'sudo ./vagrantInstall.sh' 
-        echo 'vagrant install'
+          dir ('/vagrant/chef-repo/.chef') { 
+          sh 'scp -i /vagrant/keypair.pem ubuntu@ec2-54-179-188-84.ap-southeast-1.compute.amazonaws.com:/vagrant/a* /vagrant/chef-repo/.chef/'
+          sh 'sudo knife ssl fetch'
+   	      echo 'Knife Configure'
              }
-    }
-  
-    stage ('vagrant box')
+    }  
+ 
+      stage ('Knife Verify')
     {
-          dir ('vagrant') {
-          sh 'sudo vagrant box add dummy --force https://github.com/mitchellh/vagrant-aws/raw/master/dummy.box'
-             echo 'Vagrant Ready To Launch'
+          dir ('/vagrant/chef-repo/') { 
+          sh 'sudo knife user list'
+   	      echo 'Knife Verify'
              }
-    }
- 
-    stage ('Vagrant Build')
-    {
-          dir ('vagrant') { 
-          sh 'export accesskey=${accesskey}'
-          sh 'export secretkey=${secretkey}'
-          sh 'export region=${region}'
-          sh 'export privatekeyname=${privatekeyname}'
-          sh 'export sgroup=${sgroup}'
-          sh 'export tag=${tag}'
-          sh 'export owner=${owner}'
-          sh './vagrantfile.sh > Vagrantfile'
-              echo 'Vagrantfile Created'
-              }
-    }
- 
-    stage ('Chef Server Provison')
-    {
-         dir ('vagrant') {
-         sh 'sudo vagrant up --provider=aws'
-             echo 'Ec2 Created'
-             } 
-    }
-  
-      stage ('Chef Workstation')
-    {
-         dir ('vagrant') {
-         sh 'wget https://packages.chef.io/files/stable/chefdk/2.1.11/ubuntu/16.04/chefdk_2.1.11-1_amd64.deb'
-         sh 'sudo dpkg -i chefdk_2.1.11-1_amd64.deb'
-             echo 'Chef Workstation'
-             } 
-    }
-  
+    }  
   }     
