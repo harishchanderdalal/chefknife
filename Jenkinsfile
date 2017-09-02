@@ -4,7 +4,7 @@
        stage ('Git Checkout')
     {
           dir ('knife') { 
-          git 'https://github.com/harishchanderdalal/dryRun.git'
+          git 'https://github.com/harishchanderdalal/chefknife.git'
    	      echo 'Repository Clone'
              }
     }
